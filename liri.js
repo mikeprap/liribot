@@ -29,6 +29,12 @@ function concertThis(){
 
 }
 function movieThis(){
+  axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
+  function(response) {
+    // Then we print out the imdbRating
+    console.log("The movie's rating is: " + response.data.imdbRating);
+  }
+);
 
 }
 function doWhatItSays(){
