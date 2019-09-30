@@ -10,13 +10,14 @@ var fs = require("fs");
 
 
 var whatToDo = process.argv[2];
-var userInput = process.argv[3];
+var userInput = process.argv.slice(3).join("+");
 
 function spotifyThis(input){
     spotify
   .search({ type: 'track', query: input, limit: 1 })
   .then(function(response) {
     console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
+    console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
   })
   .catch(function(err) {
     console.log(err);
