@@ -18,6 +18,7 @@ function spotifyThis(input){
   .then(function(response) {
     console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
     console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
+    console.log(JSON.stringify(response.tracks.album.name, null, 2));
   })
   .catch(function(err) {
     console.log(err);
@@ -30,10 +31,18 @@ function concertThis(){
 
 }
 function movieThis(){
-  axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
+  axios.get("http://www.omdbapi.com/?t="+userInput+"&y=&plot=short&apikey=trilogy").then(
   function(response) {
     // Then we print out the imdbRating
+    console.log(response.data);
+    
     console.log("The movie's rating is: " + response.data.imdbRating);
+    console.log("The movie's Title: " + response.data.Title);
+    console.log("The movie's Release Year: " + response.data.Year);
+    console.log("Produced in the: " + response.data.Country);
+    console.log("Movie Language: " + response.data.Language);
+    console.log("Movie Plot: " + response.data.Plot);
+    console.log("Actors: " + response.data.Actors);
   }
 );
 
