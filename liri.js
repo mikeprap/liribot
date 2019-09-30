@@ -18,7 +18,7 @@ function spotifyThis(input){
   .then(function(response) {
     console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
     console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
-    console.log(JSON.stringify(response.tracks.album.name, null, 2));
+    console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
   })
   .catch(function(err) {
     console.log(err);
