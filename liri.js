@@ -52,6 +52,9 @@ function concertThis(){
       
       console.log("Artist: " + data[index].lineup);
       console.log("Venue: " + data[index].venue.name);
+      console.log("Location: " + data[index].venue.city + "," + data[index].venue.region);
+      console.log("Date: " + moment(data[index].datetime).format("LLL"));
+    
       
       
       
@@ -112,7 +115,7 @@ case "concert-this":
     concertThis(userInput);
     break;
 case "do-what-it-says":
-    doWhatItSays(userInput);
+    doWhatItSays();
     break;
 
 
