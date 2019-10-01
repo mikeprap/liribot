@@ -11,20 +11,13 @@ var fs = require("fs");
 
 var whatToDo = process.argv[2];
 var userInput = process.argv.slice(3).join("+");
+var userInput2 = process.argv.slice(3).join(" ");
 
-function spotifyThis(){
-  if (userInput === ""){
-  userInput = "The Sign"
-  spotifyInput();
-  }else{
-    spotifyInput();
-  }
 
-}
    
   
   
-  function spotifyInput(input){
+  function spotifyThis(input){
   
   spotify
   .search({ type: 'track', query: input, limit: 1 })
@@ -115,7 +108,7 @@ case "concert-this":
     concertThis(userInput);
     break;
 case "do-what-it-says":
-    doWhatItSays();
+    doWhatItSays(userInput2);
     break;
 
 
